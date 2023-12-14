@@ -49,7 +49,7 @@ summary(migmorph)
 
 
 # subsetting data frames with [row, column]
-migmorph[1, 2]
+migmorph[1, 2] # subsetting first row and second column (output would be one value)
 migmorph[1, ]
 migmorph_subset <- migmorph[2:3, 1:3]
 migmorph[c(1, 3), ]
@@ -60,8 +60,8 @@ migmorph$reagent_id
 
 # Q: Subset migmorph for only the 2nd and 3rd rows
 # hint: fill in the blanks as needed: migmorph[ , ]
-
-
+migmorph[2:3, ]
+migmorph[c(2,3), ]
 # Q: Examine the ToothGrowth dataset that is preloaded in your R session
 # hint: Use ? to look up a description of the dataset in the help pages
 # hint: try print(), length(), class(), str() on ToothGrowth
@@ -70,7 +70,8 @@ migmorph$reagent_id
 # Q: Subset ToothGrowth to show only the rows where the dose is higher than or equal to 1.0
 # hint: Try ToothGrowth$dose >= 1.0
 # hint: Remember that you can pass a vector of TRUE/FALSE within the [] to subset: ToothGrowth[true_false_vector, ]
-
+ToothGrowth_subset <- ToothGrowth[ToothGrowth$dose >= 1.0, ]
+ToothGrowth_subset <- ToothGrowth[ToothGrowth[ , 3] >= 1.0, ]
 # Reading from Excel files (edit and check)
 install.packages("readxl") # or
 install.packages("openxlsx")
